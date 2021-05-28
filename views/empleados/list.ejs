@@ -1,0 +1,49 @@
+<% i=1; %>
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+        <div class="mdc-card p-0 to-do-list">
+          <div class="d-flex bg-primary text-white to-do-list-header">
+            <h4 class="card-title">Empleados</h4>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hoverable">
+              <thead>
+                <tr class="bg-primary">
+                  <th class="text-white text-left">Codigo</th>
+                  <th class="text-white text-left">Nombre</th>
+                  <th class="text-white text-center">Editar</th>
+                  <th class="text-white text-center">Borrar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% empleados.forEach(function(empleado) { %>
+                  <tr>
+                    <td>
+                      <%= empleado.cod_empleado %>&nbsp;
+                    </td>
+                    <td class="text-left">
+                      <%= empleado.nombres %>&nbsp;&nbsp;
+                      <%= empleado.apellidos %>
+                    </td>
+                    <td>
+                      <a href="/empleados/edit_personal/<%= empleado.cod_empleado %>"
+                        class="mdc-button mdc-button--raised filled-button--info">
+                        <i class="material-icons">edit</i>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/empleados/delete/<%= empleado.cod_empleado %>"
+                        class="mdc-button mdc-button--raised filled-button--secondary">
+                        <i class="material-icons">delete</i>
+                      </a>
+                    </td>
+                  </tr>
+                  <% i++}); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

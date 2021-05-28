@@ -1,0 +1,174 @@
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+            <div class="mdc-card p-0 to-do-list">
+                <div class="d-flex bg-primary text-white to-do-list-header">
+                    <h4 class="card-title">Edit Proveedor</h4>
+                </div>
+                <div class="mdc-card">
+                    <h6 class="card-title"></h6>
+                    <form action="/proveedores/edit/<%= proveedor.id %>" method="POST">
+                        <div class="template-demo">
+                            <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="id" value="<%= proveedor.id %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Id de la Empresa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-9-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="nombre" value="<%= proveedor.nombre %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Nombre de la
+                                            Empresa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="nativeDatePicker w-100">
+                                        <div class="mdc-text-field">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" type="date" 
+                                                name="fecha_alta"/>
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de
+                                                Alta:</label>
+                                            <span class="validity"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="telefono" value="<%= proveedor.telefono %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Teléfono
+                                            Empresa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="celular" value="<%= proveedor.celular %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Celular
+                                            Empresa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="sitio_web" value="<%= proveedor.sitio_web %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Sitio Web</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="correo" value="<%= proveedor.correo %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">e-mail
+                                            Empresa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="direccion" 
+                                        value="<%= proveedor.direccion %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Dirección de la
+                                            Empresa</label>
+                                    </div>
+                                </div>
+                                <!--<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                <div class="mdc-select demo-width-class w-100" data-mdc-auto-init="MDCSelect">
+                                    <input type="hidden" name="id_municipio"/>
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-select__menu mdc-menu-surface demo-width-class">
+                                        <ul class="mdc-list">
+                                            <li class="mdc-list-item" data-value="1">Chalatenango</li>
+                                            <li class="mdc-list-item" data-value="2">Soyapango</li>
+                                            <li class="mdc-list-item" data-value="3">Apopa</li>
+                                            <li class="mdc-list-item" data-value="4">El Paraíso</li>
+                                        </ul>
+                                    </div>
+                                    <span class="mdc-floating-label">Municipio</span>
+                                    <div class="mdc-line-ripple"></div>
+                                </div>
+                            </div>-->
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="id_municipio" value="<%= proveedor.id_municipio %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Municipio</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" value="<%= proveedor.departamento %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input"
+                                            class="mdc-floating-label">Departamento</label>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="estado"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Estado</label>
+                                    </div>
+                                </div>-->
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+                                    <div class="template-demo">
+                                        <h6 class="card-title">Datos Encargado</h6>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="encargado" value="<%= proveedor.encargado %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Nombre del
+                                            Encargado</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="celular_encargado" value="<%= proveedor.celular_encargado %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Celular del
+                                            Encargado</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="correo_encargado" value="<%= proveedor.correo_encargado %>"/>
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Email del
+                                            Encargado</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop">
+                                    <div class="template-demo">
+                                        <button type="submit" class="mdc-button mdc-button--unelevated">
+                                            <i class="material-icons">refresh</i>&nbsp;Guardar Cambios
+                                          </button>
+                                          <button type="reset" class="mdc-button mdc-button--unelevated filled-button--warning">
+                                            <i class="material-icons">cancel</i>&nbsp;Cancelar
+                                          </button>
+                                          <a class="mdc-button mdc-button--unelevated filled-button--success" href='..'><i class="material-icons">arrow_back</i>&nbsp;Volver
+                                          </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

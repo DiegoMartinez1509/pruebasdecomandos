@@ -1,0 +1,44 @@
+<% i = 1; %>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-primary text-white to-do-list-header">
+          <h4 class="card-title">Roles Empleados</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hoverable">
+            <thead >
+              <tr class="bg-primary">
+                <th class="text-white">Id</th>
+                <th class="text-white text-left">Id Empleado</th>
+                <th class="text-white text-left">Id Rol</th>
+                <th class="text-white text-center">Editar</th>
+                <th class="text-white text-center">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% rolesEmpleados.forEach(function(rolEmpleado) { %>
+              <tr>
+                <td><%= rolEmpleado.id %></td>
+                <td class="text-left"><%= rolEmpleado.id_empleado %></td>
+                <td class="text-left"><%= rolEmpleado.id_rol %></td>
+                <td>
+                  <a href="/rolesEmpleados/edit/<%= rolEmpleado.id %>" class="mdc-button mdc-button--raised filled-button--info">
+                    <i class="material-icons">edit</i>
+                  </a>
+                </td>
+                <td>
+                  <a href="/rolesEmpleados/delete/<%= rolEmpleado.id %>" class="mdc-button mdc-button--raised filled-button--secondary">
+                    <i class="material-icons">delete</i>
+                  </a>
+                </td>
+              </tr>
+              <% i++}); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

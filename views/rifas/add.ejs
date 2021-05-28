@@ -1,0 +1,135 @@
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+            <div class="mdc-card p-0 to-do-list">
+                <div class="d-flex bg-primary text-white to-do-list-header">
+                    <h4 class="card-title">Alta Rifa</h4>
+                </div>
+                <div class="mdc-card">
+                    <h6 class="card-title"></h6>
+                    <form action="/proveedores/add" method="POST">
+                        <div class="template-demo">
+                            <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="codigo_rifa" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Código Rifa Nombre
+                                            de la Rifa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="nombre" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Nombre de la
+                                            Rifa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="descripcion" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Descripción de la
+                                            Rifa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="nativeDatePicker w-100">
+                                        <div class="mdc-text-field">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" type="date"
+                                                name="fecha_registro" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de
+                                                Registro:</label>
+                                            <span class="validity"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="nativeDatePicker w-100">
+                                        <div class="mdc-text-field">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" type="date"
+                                                name="fecha_inicio" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de
+                                                Inicio:</label>
+                                            <span class="validity"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="nativeDatePicker w-100">
+                                        <div class="mdc-text-field">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" type="date"
+                                                name="fecha_fin" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de
+                                                Fin:</label>
+                                            <span class="validity"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                    <div class="nativeDatePicker w-100">
+                                        <div class="mdc-text-field">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" type="date"
+                                                name="fecha_sorteo" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de
+                                                Sorteo:</label>
+                                            <span class="validity"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="estado" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Estado del Premio
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="id_producto" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Id del
+                                            Premio</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="dias_limite_retiro" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Número de Días
+                                            para retirar el premio</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop">
+                                    <div class="template-demo">
+                                        <button type="submit" class="mdc-button mdc-button--unelevated">
+                                            <i class="material-icons">save</i>&nbsp;&nbsp;Guardar
+                                        </button>
+                                        <button type="reset"
+                                            class="mdc-button mdc-button--unelevated filled-button--warning">
+                                            <i class="material-icons">cancel</i>&nbsp;Cancelar
+                                        </button>
+                                        <a class="mdc-button mdc-button--unelevated filled-button--success"
+                                            href='/rifas'><i class="material-icons">arrow_back</i>&nbsp;Volver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

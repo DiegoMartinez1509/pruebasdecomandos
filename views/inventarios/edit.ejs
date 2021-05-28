@@ -1,0 +1,95 @@
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+            <div class="mdc-card p-0 to-do-list">
+                <div class="d-flex bg-primary text-white to-do-list-header">
+                    <h4 class="card-title">Edit Inventario</h4>
+                </div>
+                <div class="mdc-card">
+                    <form action="/inventarios/edit/<%= inventario.id %>" method="POST">
+                        <div class="template-demo">
+                            <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="fecha_registro" value="<%= inventario.fecha_registro %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Fecha
+                                            Registro</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="precio_compra" value="<%= inventario.precio_compra %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Precio
+                                            Compra</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="precio_venta" value="<%= inventario.precio_venta %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Precio
+                                            Venta</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="id_proveedor" value="<%= inventario.id_proveedor %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Id
+                                            Proveedor</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="observaciones" value="<%= inventario.observaciones %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input"
+                                            class="mdc-floating-label">Observaciones</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="stock"
+                                            value="<%= inventario.stock %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Stock</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="id_producto" value="<%= inventario.id_producto %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Id
+                                            Producto</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="template-demo">
+                                        <button type="submit" class="mdc-button mdc-button--unelevated">
+                                            <i class="material-icons">refresh</i>&nbsp;Guardar Cambios
+                                        </button>
+                                        <button type="reset"
+                                            class="mdc-button mdc-button--unelevated filled-button--warning">
+                                            <i class="material-icons">cancel</i>&nbsp;Cancelar
+                                        </button>
+                                        <a class="mdc-button mdc-button--unelevated filled-button--success" href='/inventarios'><i
+                                                class="material-icons">arrow_back</i>&nbsp;Volver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

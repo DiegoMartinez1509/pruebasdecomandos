@@ -1,0 +1,58 @@
+<% i = 1; %>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-primary text-white to-do-list-header">
+          <h4 class="card-title">Rifas</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hoverable">
+            <thead >
+              <tr class="bg-primary">
+                <th class="text-white">Código</th>
+                <th class="text-white text-left">Nombre</th>
+                <th class="text-white text-left">Descripción</th>
+                <th class="text-white">Fecha Registro</th>
+                <th class="text-white text-left">Fecha Inicio</th>
+                <th class="text-white text-left">Fecha Fin</th>
+                <th class="text-white text-center">Fecha Sorteo</th>
+                <th class="text-white text-center">Estado</th>
+                <th class="text-white text-center">Id Producto</th>
+                <th class="text-white text-center">Días Límite Retiro</th>
+                <th class="text-white text-center">Editar</th>
+                <th class="text-white text-center">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% rifas.forEach(function(rifa) { %>
+              <tr>
+                <td class="text-left"><%= rifa.codigo_rifa %></td>
+                <td class="text-left"><%= rifa.nombre %></td>
+                <td class="text-left"><%= rifa.descripcion %></td>
+                <td class="text-left"><%= rifa.fecha_registro %></td>
+                <td class="text-left"><%= rifa.fecha_inicio %></td>
+                <td class="text-left"><%= rifa.fecha_fin %></td>
+                <td class="text-left"><%= rifa.fecha_sorteo %></td>
+                <td class="text-left"><%= rifa.estado %></td>
+                <td class="text-left"><%= rifa.id_producto %></td>
+                <td class="text-left"><%= rifa.dias_limite_retiro %></td>
+                <td>
+                  <a href="/rifas/edit/<%= rifa.codigo_rifa %>" class="mdc-button mdc-button--raised filled-button--info">
+                    <i class="material-icons">edit</i>
+                  </a>
+                </td>
+                <td>
+                  <a href="/rifas/delete/<%= rifa.codigo_rifa %>" class="mdc-button mdc-button--raised filled-button--secondary">
+                    <i class="material-icons">delete</i>
+                  </a>
+                </td>
+              </tr>
+              <% i++}); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

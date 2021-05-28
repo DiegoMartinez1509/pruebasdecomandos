@@ -1,0 +1,50 @@
+<% i=1; %>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-primary text-white to-do-list-header">
+          <h4 class="card-title">Boletos</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hoverable">
+            <thead>
+              <tr  class="bg-primary">
+                <th class="text-center text-white">Id</th>
+                <th class="text-center text-white">Código Rifa</th>
+                <th class="text-center text-white">Número Inicial</th>
+                <th class="text-center text-white">Número Final</th>
+                <th class="text-center text-white">precio</th>
+                <th class="text-center text-white">Número Ganador</th>
+                <th class="text-center text-white">Editar</th>
+                <th class="text-center text-white">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% boletos.forEach(function(boleto) { %>
+              <tr>
+                <td class="text-left"><%= boleto.id %></td>
+                <td class="text-left"><%= boleto.codigo_rifa %></td>
+                <td><%= boleto.num_inicial %></td>
+                <td><%= boleto.num_final %></td>
+                <td><%= boleto.precio %></td>
+                <td><%= boleto.num_ganador %></td>
+                <td>
+                  <a href="/boletos/edit/<%= boleto.id %>" class="mdc-button mdc-button--raised filled-button--info">
+                    <i class="material-icons">edit</i>
+                  </a>
+                </td>
+                <td>
+                  <a href="boletos/delete/<%= boleto.id %>" class="mdc-button mdc-button--raised filled-button--secondary">
+                    <i class="material-icons">delete</i>
+                  </a>
+                </td>
+              </tr>
+              <% i++}); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

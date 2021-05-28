@@ -1,0 +1,53 @@
+<% i=1; %>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-primary text-white to-do-list-header">
+          <h4 class="card-title">Sucursales</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hoverable">
+            <thead>
+              <tr class="bg-primary">
+                <th class="text-white">No</th>
+                <th class="text-center text-white">Código</th>
+                <th class="text-center text-white">Nombre</th>
+                <th class="text-center text-white">Télefono</th>
+                <th class="text-center text-white">Dirección</th>
+                <th class="text-left text-white">Municipio</th>
+                <th class="text-left text-white">Departamento</th>
+                <th class="text-center text-white">Estado</th>
+                <th class="text-center text-white">Editar</th>
+                <th class="text-center text-white">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% sucursales.forEach(function(sucursal) { %>
+                <tr>
+                  <td><%= i %></td>
+                  <td class="text-left"><%= sucursal.cod_sucursal %></td>
+                  <td class="text-left"><%= sucursal.nombre %></p></td>
+                  <td class="text-left"><%= sucursal.telefono %></td>
+                  <td class="text-left"><%= sucursal.direccion %></td>
+                  <td class="text-left"><%= sucursal.municipio %></td>
+                  <td class="text-left"><%= sucursal.departamento %></td>
+                  <td><%= sucursal.estado %></td>
+                  <td>
+                    <a href="/sucursales/edit/<%= sucursal.cod_sucursal %>" class="mdc-button mdc-button--raised filled-button--info">
+                      <i class="material-icons">edit</i>
+                    </a>
+                  </td>
+                  <td><a href='sucursales/delete/<%= sucursal.cod_sucursal %>'
+                        class="mdc-button mdc-button--raised filled-button--secondary">
+                      <i class="material-icons">delete</i></a>
+                  </td>
+                </tr>
+              <% i++}); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

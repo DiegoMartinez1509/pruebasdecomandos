@@ -1,0 +1,77 @@
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+            <div class="mdc-card p-0 to-do-list">
+                <div class="d-flex bg-primary text-white to-do-list-header">
+                    <h4 class="card-title">Edit Boleto</h4>
+                </div>
+                <div class="mdc-card">
+                    <form action="/boletos/edit/<%= boleto.id %>" method="POST">
+                        <div class="template-demo">
+                            <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="codigo_rifa" value="<%= boleto.codigo_rifa %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Código
+                                            Rifa</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="num_inicial" value="<%= boleto.num_inicial %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Número
+                                            Inicial</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="num_final"
+                                            value="<%= boleto.num_final %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Número
+                                            Final</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input" name="precio"
+                                            value="<%= boleto.precio %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Precio</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                    <div class="mdc-text-field w-100">
+                                        <input class="mdc-text-field__input" id="text-field-hero-input"
+                                            name="num_ganador" value="<%= boleto.num_ganador %>" />
+                                        <div class="mdc-line-ripple"></div>
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Número
+                                            Ganador</label>
+                                    </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop">
+                                    <div class="template-demo">
+                                        <button type="submit" class="mdc-button mdc-button--unelevated">
+                                            <i class="material-icons">refresh</i>&nbsp;Guardar Cambios
+                                        </button>
+                                        <button type="reset"
+                                            class="mdc-button mdc-button--unelevated filled-button--warning">
+                                            <i class="material-icons">cancel</i>&nbsp;Cancelar
+                                        </button>
+                                        <a class="mdc-button mdc-button--unelevated filled-button--success" href='..'><i
+                                                class="material-icons">arrow_back</i>&nbsp;Volver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
