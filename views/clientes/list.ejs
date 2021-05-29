@@ -1,0 +1,76 @@
+<% layout('../layout') -%>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-success text-white to-do-list-header">
+          <h4 class="card-title">Clientes</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table hoverable">
+            <thead>
+              <tr class="bg-success">
+                <% i = 1; %>
+                <th class="text-white text-left">No</th>
+                <th class="text-white text-left">Nombres</th>
+                <th class="text-white text-left">Apellidos</th>
+                <th class="text-white text-left">DUI</th>
+                <th class="text-white text-left">Celular</th>
+                <th class="text-white text-left">Teléfono</th>
+                <th class="text-white text-left">Fecha de Nacimiento</th>                
+                <th class="text-white text-left">Municipio</th>
+                <th class="text-white text-left">Dirección</th>
+                <th class="text-white text-left">Fecha de registro</th>
+                <th class="text-white text-left">Editar</th>
+                <th class="text-white text-left">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% clientes.forEach(function(cliente) { %>
+              <tr>
+                <td><%= i %></td>
+                <td class="text-left"><%= cliente.nombres %></td>
+                <td class="text-left"><%= cliente.apellidos %></td>
+                <td class="text-left"><%= cliente.DUI %></td>
+                <td class="text-left"><%= cliente.celular %></td>
+                <td class="text-left"><%= cliente.telefono %></td>
+                <!-- FORMATO de fecha con moment-->
+                <td class="text-left"><%= moment(cliente.fecha_nac).format('DD/MM/YYYY')  %></td>
+                <td class="text-left"><%= cliente.municipio %></td>
+                <td class="text-left"><%= cliente.direccion %></td>
+                
+                <td class="text-left"><%= moment(cliente.fecha_registro).format('DD/M/YYYY')  %></td>
+                <td>
+                  <a
+                    href="/clientes/edit/<%= cliente.id %>"
+                    class="mdc-button mdc-button--raised filled-button--info"
+                  >
+                    <i class="material-icons">edit</i>
+                  </a>
+                </td>
+                <td>
+                  <a
+                    href="/clientes/delete/<%= cliente.id %>"
+                    class="mdc-button mdc-button--raised filled-button--secondary"
+                  >
+                    <i class="material-icons">delete</i>
+                  </a>
+                </td>
+              </tr>
+              <% i++}); %>
+            </tbody>
+          </table>
+          
+        </div>
+        <div>
+        <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="mdc-button mdc-button--raised bg-primary" href="/clientes/add">
+            <i class="material-icons">person_add</i> Nuevo
+          </a>
+        </div>
+        <br>
+      </div>
+      
+    </div>
+  </div>
+</div>

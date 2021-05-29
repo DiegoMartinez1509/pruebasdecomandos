@@ -1,54 +1,48 @@
-<div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-5-desktop stretch-card">
-      <div class="mdc-card p-0 to-do-list">
-        <div class="d-flex bg-primary text-white to-do-list-header">
-          <h4 class="card-title">Alta Categoría</h4>
-        </div>
-        <div class="mdc-card">
-          <form action="/categorias/add" method="POST">
-            <div class="template-demo">
-              <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
-                  <div class="mdc-text-field w-100">
-                    <input class="mdc-text-field__input" id="text-field-hero-input" name="nombre" />
-                    <div class="mdc-line-ripple"></div>
-                    <label for="text-field-hero-input" class="mdc-floating-label">nombre de la Categoria</label>
-                  </div>
-                </div>
-                <div style="text-align: center; padding-bottom: 40px;">
-                  <a href="/categorias/add/<%=categoria.id%>/enrolled/<%=anterior%>">
-                        <button type="button" onclick=<%=click% class="btn btn-primary btn-lg"><< Anterior Lección</button>
-                  </a>
-                  <a href="categoria/add/<%=categoria.id%>/enrolled/<%=siguiente%>">
-                        <button type="button" onclick=<%=click%> class="btn btn-primary btn-lg">Siguiente Lección >></button>
-                  </a>
-          </div>
-                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
-                  <div class="mdc-text-field w-100">
-                    <input class="mdc-text-field__input" id="text-field-hero-input" name="descripcion" />
-                    <div class="mdc-line-ripple"></div>
-                    <label for="text-field-hero-input" class="mdc-floating-label">Descripción</label>
-                  </div>
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop">
-                  <div class="template-demo">
-                    <button type="submit" class="mdc-button mdc-button--unelevated">
+<% layout('../layout') %>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-5-desktop stretch-card">
+                <div class="mdc-card p-0 to-do-list">
+                    <div class="d-flex bg-primary text-white to-do-list-header">
+                        <h4 class="card-title">Alta Categoría</h4>
+                    </div>
+                    <div class="mdc-card">
+                        <form action="/categorias/add" method="POST">
+                            <div class="template-demo">
+                                <div class="mdc-layout-grid__inner">
+                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                        <div class="mdc-text-field w-100">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" name="nombre" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">nombre de la Categoria</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                        <div class="mdc-text-field w-100">
+                                            <input class="mdc-text-field__input" id="text-field-hero-input" name="descripcion" />
+                                            <div class="mdc-line-ripple"></div>
+                                            <label for="text-field-hero-input" class="mdc-floating-label">Descripción</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop">
+                                        <div class="template-demo">
+                                            <button type="submit" class="mdc-button mdc-button--unelevated">
                       <i class="material-icons">save</i>&nbsp;&nbsp;Guardar
                     </button>
-                    <button type="reset" class="mdc-button mdc-button--unelevated filled-button--warning">
+                                            <button type="reset" class="mdc-button mdc-button--unelevated filled-button--warning">
                       <i class="material-icons">cancel</i>&nbsp;Cancelar
                     </button>
-                    <a class="mdc-button mdc-button--unelevated filled-button--success" href='/categorias'><i
+                                            <a class="mdc-button mdc-button--unelevated filled-button--success" href='/categorias'><i
                         class="material-icons">arrow_back</i>&nbsp;Volver
                     </a>
-                  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
             </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
-</div>

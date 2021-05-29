@@ -1,192 +1,224 @@
-<!--<h2><i class="material-icons">person_add</i> Registro de Clientes</h2>
-<form action="">
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-      <div class="mdc-text-field mdc-text-field--outlined">
-        <input class="mdc-text-field__input" name="nombres"/>
-        <div class="mdc-notched-outline">
-          <div class="mdc-notched-outline__leading"></div>
-          <div class="mdc-notched-outline__notch">
-            <label for="text-field-hero-input" class="mdc-floating-label">Name</label>
+<% layout('../layout') -%>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+                <div class="mdc-card p-0 to-do-list">
+                    <div class="d-flex bg-primary text-white to-do-list-header">
+                        <h2><i class="material-icons">person_add</i> Registro de Clientes</h2>
+                    </div>
+                    <div class="mdc-card">
+
+                        <hr />
+
+                        <% if(locals.foto){ %>
+                            <span class="figure">
+            <%= user.username %>
+            <img src="assets/images/faces/face1.jpg" alt="user" class="user">
+          </span>
+                            <% } %>
+                                <!-- este formulario tiene el atributo enctype="multipart/form-data" porque ademas de 
+        de guardar la informacion a la base de datos sube un archivo de foto -->
+                                <form action="/clientes/add" enctype="multipart/form-data" method="POST">
+                                    <input type="file" accept="image/*" onchange="imagePreview(this.files)" name="photo">
+                                    <img id="img_preview" width="10%" class="img">
+                                    <div class="template-demo">
+                                        <div class="mdc-layout-grid__inner">
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input masked" name="nombres" />
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label for="text-field-hero-input" class="mdc-floating-label">Nombres</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" name="apellidos" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Apellidos</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mdc-notched-outline__trailing"></div>
-        </div>
+          <br />
+          <div class="mdc-layout-grid__inner">
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input
+                  class="mdc-text-field__input"
+                  type="date"
+                  name="fecha_nac"
+                />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Fecha de Nacimiento</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" name="DUI" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >DUI</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" name="telefono" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Teléfono</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" name="celular" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Celular</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="mdc-layout-grid__inner">
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop"
+            >
+            <div class="mdc-text-field mdc-text-field--outlined">
+            
+            <select class="municipios" name="id_municipio">
+              
+            </select>
+            </div>
+
+            </div>
+
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-9-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" name="direccion" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Direccion</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br /><br />
+          <button type="submit" class="mdc-button mdc-button--raised">
+            <i class="material-icons">save</i> Guardar
+          </button>
+          <a class="mdc-button mdc-button--raised bg-success" href="/clientes">
+            <i class="material-icons">search</i> Buscar
+          </a>
+          </div>
+        </form>
       </div>
     </div>
-    <button type="submit" class="btn">
-      <i class="material-icons">save</i> Guardar
-    </button>
   </div>
-</form>-->
-<div class="mdc-layout-grid__inner mt-2">
-  <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-2-desktop">
-    <div class="mdc-card">
-      <div class="d-block d-md-flex align-items-center ">
-        <img src="/assets/images/faces/face2.jpg">
-      </div>
-
-    </div>
-    <!--EMPIEZA-->
-    
-    <!--TERMINA-->
-    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8-desktop">
-      <div class="mdc-card">
-        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
-          <div class="mdc-text-field w-100">
-            <input class="mdc-text-field__input" id="text-field-hero-input">
-            <div class="mdc-line-ripple"></div>
-            <label for="text-field-hero-input" class="mdc-floating-label">Nombre</label>
-          </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
-          <div class="mdc-text-field w-100">
-            <input class="mdc-text-field__input" id="text-field-hero-input">
-            <div class="mdc-line-ripple"></div>
-            <label for="text-field-hero-input" class="mdc-floating-label">Fecha de Nacimiento</label>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
-          <div class="mdc-text-field w-100">
-            <input class="mdc-text-field__input" id="text-field-hero-input">
-            <div class="mdc-line-ripple"></div>
-            <label for="text-field-hero-input" class="mdc-floating-label">DUI</label>
-          </div>
-        </div>
-
-        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3">
-          <div class="mdc-text-field w-100">
-            <input class="mdc-text-field__input" id="text-field-hero-input">
-            <div class="mdc-line-ripple"></div>
-            <label for="text-field-hero-input" class="mdc-floating-label">Teléfono Fijo</label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!--<div class="product-box">
-            <div class="product-name-box">
-              <div class="product-name-box-primary">
-                <p class="pl-4 pt-2">Long Strappy Dress</p>
-                <h4 class="font-weight-normal pl-4 mt-2">$399.00</h4>
-              </div>
-              <div class="add-product-button">
-                <button class="mdc-button mdc-button--secondary-shadow mdc-button--raised icon-button shaped-button secondary-filled-button">
-                  <i class="material-icons mdc-button__icon">add</i>
-                </button>
-              </div>
-            </div>
-            <div class="product-description-box">
-              <p class="font-weight-normal product-description-box-text">Qui, explicabo eius nisi fugit repudiandae, quos voluptates, beatae ullam consectetur ducimus</p>
-              <div class="d-block d-sm-flex justify-content-between align-items-center mt-3">
-                <div class="d-flex">
-                  <select id="long-strappy-dress-rating" name="rating" autocomplete="off">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                  <p class="tx-12 text-muted mb-0 ml-1">4 ( 342 )</p>
-                </div>   
-                <a href="" class="text-black">READ MORE</a>  
-              </div>
-            </div>
-          </div>-->
-
-  <!--<div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-desktop stretch-card">
-    
-        <div class="mdc-card p-0 to-do-list">
-            <div class="mdc-tab-wrapper">
-                <div class="d-flex align-items-center justify-content-between bg-primary text-white to-do-list-header">
-                    <h4 class="card-title">Alta Empleado</h4>
-                    <div class="d-flex">
-                        <i class="material-icons">list</i>
-                        <i class="material-icons ml-2">date_range</i>
-                        <i class="material-icons ml-2">star</i>
-                        <i class="material-icons ml-2">more_vert</i>
-                    </div>
-                </div>
-                <div class="mdc-tab-bar bg-primary" role="tablist">
-                    <div class="mdc-tab-scroller">
-                        <div class="mdc-tab-scroller__scroll-area">
-                            <div class="mdc-tab-scroller__scroll-content">
-                                <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                                    <span class="mdc-tab__content">
-                                        <span class="mdc-tab__text-label text-white">Todo</span>
-                                    </span>
-                                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                                        <span
-                                            class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                    </span>
-                                    <span class="mdc-tab__ripple"></span>
-                                </button>
-                                <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                                    <span class="mdc-tab__content">
-                                        <span class="mdc-tab__text-label text-white">Done</span>
-                                    </span>
-                                    <span class="mdc-tab-indicator mdc-tab-indicator">
-                                        <span
-                                            class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                    </span>
-                                    <span class="mdc-tab__ripple"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content content--active">
-                    <div class="to-do-list-content">
-                        <div class="to-do-list-item">
-                            <div >
-                                <h5 class="mb-0 font-weight-medium">Meet up with friends</h5>
-                                <p class="tx-12 text-muted mb-0">at McDonald’s, Monday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                        <div class="to-do-list-item">
-                            <div class="ml-3">
-                                <h5 class="mb-0 font-weight-medium">Finish the proposal design</h5>
-                                <p class="tx-12 text-muted mb-0">at office, Thursday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                        <div class="to-do-list-item">
-                            <div class="ml-3">
-                                <h5 class="mb-0 font-weight-medium">Contract for the client ASAP</h5>
-                                <p class="tx-12 text-muted mb-0">at office, Thursday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="to-do-list-content">
-                        <div class="to-do-list-item">
-                            <div class="ml-3">
-                                <h5 class="mb-0 font-weight-medium">Pick Jane from school</h5>
-                                <p class="tx-12 text-muted mb-0">at school, Thursday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                        <div class="to-do-list-item">
-                            <div class="ml-3">
-                                <h5 class="mb-0 font-weight-medium">Meet up with friends</h5>
-                                <p class="tx-12 text-muted mb-0">at McDonald’s, Monday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                        <div class="to-do-list-item">
-                            <div class="ml-3">
-                                <h5 class="mb-0 font-weight-medium">Finish the proposal design</h5>
-                                <p class="tx-12 text-muted mb-0">at office, Thursday</p>
-                            </div>
-                            <i class="material-icons ml-auto mr-3 delete-icon">delete</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
+</div>
+<!--SCRIPT-->
+<% block('footerjs', `<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+$(document).ready(function() {    
+  //funcion para llamar los municipios
+  $('.municipios').select2({      
+    theme: 'classic',      
+    width: '100%',      
+    ajax: {        
+      url: '/municipios/list',        
+      dataType: 'json',                  
+      data: function (params) {          
+        return {            
+          q: params.term,             
+          page: params.page          
+        };        
+      },        
+      processResults: function (data, params) {          
+      return {            
+          results: data,          
+      };        
+      },        
+      cache: true             
+      }    
+    });
+    });
+        function imagePreview(file) {
+            var img = document.querySelectorAll('img');                         
+            var reader = new FileReader();
+            reader.onload = function(e) {
+               var img = document.getElementById('img_preview');
+               img.src = e.target.result;                   
+            }
+            reader.readAsDataURL(file[0]);     
+        }
+        </script>`) 
+-%>

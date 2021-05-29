@@ -1,4 +1,10 @@
+<% layout('../layout') -%>
 <div class="mdc-layout-grid">
+    <form action="/empleados/search" method="get">
+        <input placeholder="Búsqueda" type="text" name="search">
+        <br>
+        <button type="submit">Buscar</button>
+    </form>
     <div class="mdc-layout-grid__inner">
         <div
             class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet">

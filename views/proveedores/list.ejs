@@ -1,89 +1,92 @@
-<% i=1; %>
-  <div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
-        <div class="mdc-card p-0 to-do-list">
-          <div class="d-flex bg-primary text-white to-do-list-header">
-            <h4 class="card-title">Proveedores</h4>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-hoverable">
-              <thead>
-                <tr class="bg-primary">
-                  <th class="text-left text-white">Id</th>
-                  <th class="text-center text-white">Empresa</th>
-                  <th class="text-center text-white">Dirección</th>
-                  <th class="text-center text-white">Municipio</th>
-                  <th class="text-center text-white">Departamento</th>
-                  <th class="text-center text-white">Teléfono</th>
-                  <th class="text-center text-white">Celular</th>
-                  <th class="text-center text-white">Correo</th>
-                  <th class="text-center text-white">Sitio Web</th>
-                  <th class="text-center text-white">Estado</th>
-                  <th class="text-center text-white">Nombre Encargado</th>
-                  <th class="text-center text-white">Celular Encargado</th>
-                  <th class="text-center text-white">Correo Encargado</th>
-                  <th class="text-center text-white">Editar</th>
-                  <th class="text-center text-white">Borrar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% proveedores.forEach(function(proveedor) { %>
-                  <tr>
+<% layout('../layout') %>
+    <% i=1; %>
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+                    <div class="mdc-card p-0 to-do-list">
+                        <div class="d-flex bg-primary text-white to-do-list-header">
+                            <h4 class="card-title">Proveedores</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hoverable">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th class="text-left text-white">Id</th>
+                                        <th class="text-center text-white">Empresa</th>
+                                        <th class="text-center text-white">Dirección</th>
+                                        <th class="text-center text-white">Municipio</th>
+                                        <th class="text-center text-white">Departamento</th>
+                                        <th class="text-center text-white">Teléfono</th>
+                                        <th class="text-center text-white">Celular</th>
+                                        <th class="text-center text-white">Correo</th>
+                                        <th class="text-center text-white">Sitio Web</th>
+                                        <th class="text-center text-white">Estado</th>
+                                        <th class="text-center text-white">Nombre Encargado</th>
+                                        <th class="text-center text-white">Celular Encargado</th>
+                                        <th class="text-center text-white">Correo Encargado</th>
+                                        <th class="text-center text-white">Editar</th>
+                                        <th class="text-center text-white">Borrar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% proveedores.forEach(function(proveedor) { %>
+                                        <tr>
 
-                    <td class="text-left">
-                      <%= proveedor.id %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.nombre %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.direccion %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.municipio %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.departamento %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.telefono %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.celular %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.correo %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.sitio_web %>
-                    </td>
-                    <td>
-                      <%= proveedor.estado %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.encargado %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.celular_encargado %>
-                    </td>
-                    <td class="text-left">
-                      <%= proveedor.correo_encargado %>
-                    </td>
-                    <td><a href="/proveedores/edit/<%= proveedor.id %>"
-                        class="mdc-button mdc-button--raised filled-button--info">
-                        <i class="material-icons">edit</i>
-                      </a></td>
-                    <td><a href='proveedores/delete/<%= proveedor.id %>'
-                        class="mdc-button mdc-button--raised filled-button--secondary">
-                        <i class="material-icons">delete</i>
-                      </a></td>
-                  </tr>
-                  <% i++}); %>
-              </tbody>
-            </table>
-          </div>
+                                            <td class="text-left">
+                                                <%= proveedor.id %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.nombre %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.direccion %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.municipio %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.departamento %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.telefono %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.celular %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.correo %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.sitio_web %>
+                                            </td>
+                                            <td>
+                                                <%= proveedor.estado %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.encargado %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.celular_encargado %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= proveedor.correo_encargado %>
+                                            </td>
+                                            <td>
+                                                <a href="/proveedores/edit/<%= proveedor.id %>" class="mdc-button mdc-button--raised filled-button--info">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href='proveedores/delete/<%= proveedor.id %>' class="mdc-button mdc-button--raised filled-button--secondary">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% i++}); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>

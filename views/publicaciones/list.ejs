@@ -1,65 +1,68 @@
-<% i=1; %>
-  <div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
-        <div class="mdc-card p-0 to-do-list">
-          <div class="d-flex bg-primary text-white to-do-list-header">
-            <h4 class="card-title">publicaciones</h4>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-hoverable">
-              <thead>
-                <tr class="bg-primary">
-                  <th class="text-left text-white">Id</th>
-                  <th class="text-center text-white">Título</th>
-                  <th class="text-center text-white">Descripción</th>
-                  <th class="text-center text-white">Contenido</th>
-                  <th class="text-center text-white">Estado</th>
-                  <th class="text-center text-white">Fecha</th>
-                  <th class="text-center text-white">Id Empleado</th>
-                  <th class="text-center text-white">Editar</th>
-                  <th class="text-center text-white">Borrar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% publicaciones.forEach(function(publicacion) { %>
-                  <tr>
+<% layout('../layout') %>
+    <% i=1; %>
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
+                    <div class="mdc-card p-0 to-do-list">
+                        <div class="d-flex bg-primary text-white to-do-list-header">
+                            <h4 class="card-title">publicaciones</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hoverable">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th class="text-left text-white">Id</th>
+                                        <th class="text-center text-white">Título</th>
+                                        <th class="text-center text-white">Descripción</th>
+                                        <th class="text-center text-white">Contenido</th>
+                                        <th class="text-center text-white">Estado</th>
+                                        <th class="text-center text-white">Fecha</th>
+                                        <th class="text-center text-white">Id Empleado</th>
+                                        <th class="text-center text-white">Editar</th>
+                                        <th class="text-center text-white">Borrar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% publicaciones.forEach(function(publicacion) { %>
+                                        <tr>
 
-                    <td class="text-left">
-                      <%= publicacion.id %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.titulo %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.descripcion %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.contenido %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.estado %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.fecha %>
-                    </td>
-                    <td class="text-left">
-                      <%= publicacion.id_empleado %>
-                    </td>
-                    <td><a href="/publicaciones/edit/<%= publicacion.id %>"
-                        class="mdc-button mdc-button--raised filled-button--info">
-                        <i class="material-icons">edit</i>
-                      </a></td>
-                    <td><a href='publicaciones/delete/<%= publicacion.id %>'
-                        class="mdc-button mdc-button--raised filled-button--secondary">
-                        <i class="material-icons">delete</i>
-                      </a></td>
-                  </tr>
-                  <% i++}); %>
-              </tbody>
-            </table>
-          </div>
+                                            <td class="text-left">
+                                                <%= publicacion.id %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.titulo %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.descripcion %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.contenido %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.estado %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.fecha %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= publicacion.id_empleado %>
+                                            </td>
+                                            <td>
+                                                <a href="/publicaciones/edit/<%= publicacion.id %>" class="mdc-button mdc-button--raised filled-button--info">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href='publicaciones/delete/<%= publicacion.id %>' class="mdc-button mdc-button--raised filled-button--secondary">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% i++}); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>

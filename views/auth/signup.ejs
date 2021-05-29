@@ -1,0 +1,74 @@
+<% layout('../layout') -%>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+      <div class="mdc-card p-0 to-do-list">
+        <div class="d-flex bg-primary text-white to-do-list-header">
+          <h2><i class="material-icons">person_add</i> Registro de Usuarios</h2>
+        </div>
+        <div class="mdc-card">
+        
+        <hr />
+        <form action="/signup" method="POST">
+          <div class="template-demo">
+            <div class="mdc-layout-grid__inner">
+          
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input masked" name="username" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Nombre de usuario</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+            <br>
+            <div class="mdc-layout-grid__inner">
+
+            <div
+              class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop"
+            >
+              <div class="mdc-text-field mdc-text-field--outlined">
+                <input class="mdc-text-field__input" type="password" name="password" />
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label
+                      for="text-field-hero-input"
+                      class="mdc-floating-label"
+                      >Contraseña</label
+                    >
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          
+          <br />
+          
+          <br /><br />
+          <button type="submit" class="mdc-button mdc-button--raised">
+            <i class="material-icons">save</i> Guardar
+          </button>
+          <a class="mdc-button mdc-button--raised bg-success" href="/clientes">
+            <i class="material-icons">search</i> Buscar
+          </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,54 +1,71 @@
-<% i=1; %>
-<div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
-      <div class="mdc-card p-0 to-do-list">
-        <div class="d-flex bg-primary text-white to-do-list-header">
-          <h4 class="card-title">Inventarios</h4>
+<% layout('../layout') %>
+    <% i=1; %>
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-desktop stretch-card">
+                    <div class="mdc-card p-0 to-do-list">
+                        <div class="d-flex bg-primary text-white to-do-list-header">
+                            <h4 class="card-title">Inventarios</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hoverable">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th class="text-center text-white">Id</th>
+                                        <th class="text-center text-white">Fecha Registro</th>
+                                        <th class="text-center text-white">Precio Compra</th>
+                                        <th class="text-center text-white">Precio Venta</th>
+                                        <th class="text-center text-white">Id Proveedor</th>
+                                        <th class="text-center text-white">Observaciones</th>
+                                        <th class="text-center text-white">Stock</th>
+                                        <th class="text-center text-white">Id Producto</th>
+                                        <th class="text-center text-white">Editar</th>
+                                        <th class="text-center text-white">Borrar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% inventarios.forEach(function(inventario) { %>
+                                        <tr>
+                                            <td class="text-left">
+                                                <%= inventario.id %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= inventario.fecha_registro %>
+                                            </td>
+                                            <td>
+                                                <%= inventario.precio_compra %>
+                                            </td>
+                                            <td>
+                                                <%= inventario.precio_venta %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= inventario.id_proveedor %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= inventario.observaciones %>
+                                            </td>
+                                            <td>
+                                                <%= inventario.stock %>
+                                            </td>
+                                            <td class="text-left">
+                                                <%= inventario.id_producto %>
+                                            </td>
+                                            <td>
+                                                <a href="/inventarios/edit/<%= inventario.id %>" class="mdc-button mdc-button--raised filled-button--info">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="inventarios/delete/<%= inventario.id %>" class="mdc-button mdc-button--raised filled-button--secondary">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% i++}); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="table-responsive">
-          <table class="table table-hoverable">
-            <thead>
-              <tr  class="bg-primary">
-                <th class="text-center text-white">Id</th>
-                <th class="text-center text-white">Fecha Registro</th>
-                <th class="text-center text-white">Precio Compra</th>
-                <th class="text-center text-white">Precio Venta</th>
-                <th class="text-center text-white">Id Proveedor</th>
-                <th class="text-center text-white">Observaciones</th>
-                <th class="text-center text-white">Stock</th>
-                <th class="text-center text-white">Id Producto</th>
-                <th class="text-center text-white">Editar</th>
-                <th class="text-center text-white">Borrar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% inventarios.forEach(function(inventario) { %>
-              <tr>
-                <td class="text-left"><%= inventario.id %></td>
-                <td class="text-left"><%= inventario.fecha_registro %></td>
-                <td><%= inventario.precio_compra %></td>
-                <td><%= inventario.precio_venta %></td>
-                <td class="text-left"><%= inventario.id_proveedor %></td>
-                <td class="text-left"><%= inventario.observaciones %></td>
-                <td><%= inventario.stock %></td>
-                <td class="text-left"><%= inventario.id_producto %></td>
-                <td>
-                  <a href="/inventarios/edit/<%= inventario.id %>" class="mdc-button mdc-button--raised filled-button--info">
-                    <i class="material-icons">edit</i>
-                  </a>
-                </td>
-                <td>
-                  <a href="inventarios/delete/<%= inventario.id %>" class="mdc-button mdc-button--raised filled-button--secondary">
-                    <i class="material-icons">delete</i>
-                  </a>
-                </td>
-              </tr>
-              <% i++}); %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
